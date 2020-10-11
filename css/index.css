@@ -92,7 +92,8 @@ samp {
   margin-left: -1.5rem;
 }
 
-#search {
+#search,
+.map {
   border-radius: 10px;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
@@ -102,7 +103,12 @@ samp {
   cursor: pointer;
 }
 
-#search:hover {
+.map {
+  margin-bottom: 1rem;
+}
+
+#search:hover,
+.map:hover {
   color: white;
   background-color: goldenrod;
 }
@@ -134,4 +140,8 @@ samp {
     word-spacing: 4px;
     text-align: center;
   }
+}
+
+a {
+  text-decoration: none;
 }

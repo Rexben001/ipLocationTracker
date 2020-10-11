@@ -12,8 +12,10 @@ const createItem = (data) => {
   const nodeOpening = document.createTextNode(`{`);
   opening.appendChild(nodeOpening);
   div.appendChild(opening);
-
-  const items = [];
+  goToMap({
+    lat: data.latitude,
+    lon: data.longitude,
+  });
   for (let key in data) {
     const p = document.createElement('p');
     const span = document.createElement('span');
@@ -84,3 +86,18 @@ document.getElementById('search').addEventListener('click', () => {
   const input = document.getElementById('inputValue').value;
   fetchData(input);
 });
+
+const goToMap = ({ lat, lon }) => {
+  console.log(lat, lon);
+  const p = document.querySelector('.map');
+  p.innerHTML = '';
+  const link = `https://www.google.com/maps/place/${lat},${lon}`;
+  const a = document.createElement('a');
+  const node = document.createTextNode('Open Map');
+  a.appendChild(node);
+  a.href = link;
+  a.target = '_blank';
+
+  p.appendChild(a);
+  console.log(p, a);
+};
